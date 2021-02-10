@@ -23,7 +23,6 @@ export class BrandsRepository {
     }
 
     async getBrand(id: string): Promise<BrandModel | null> {
-        // return this.model.findById(id);
         //$log.info("Search a car from ID", id);
         const brand = await this.model.findById(id);
 
@@ -33,7 +32,7 @@ export class BrandsRepository {
     }
 
     async save(brand: BrandModel): Promise<BrandModel> {
-        $log.info({message: "Validate car", brand});
+        $log.info({message: "Validate a brand", brand});
 
         const model = new this.model(brand);
         $log.info({message: "Save brand", brand});
@@ -42,5 +41,15 @@ export class BrandsRepository {
         $log.info({message: "brand saved", model});
 
         return model;
+    }
+
+    async delete(id: string): Promise<BrandModel> {
+        return await this.model.deleteOne({
+            _id: id
+          });
+    }
+
+    async getBrands(): Promise<BrandModel[]> {
+        return this.model.find();
     }
 }

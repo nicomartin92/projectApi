@@ -29,6 +29,12 @@ export class CarsRepository {
         return model;
     }
 
+    async delete(id: string): Promise<CarModel> {
+        return await this.model.deleteOne({
+            _id: id
+          });
+    }
+
     async getCars(): Promise<CarModel[]> {
         return this.model.find().populate("brand");
     }

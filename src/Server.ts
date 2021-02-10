@@ -22,6 +22,9 @@ export const rootDir = __dirname;
   acceptMimes: ["application/json"],
   httpPort: process.env.PORT || 8083,
   httpsPort: false, // CHANGE
+  logger: {
+    level: (process.env.LOG_LEVEL || "info") as any, // info or debug
+  },
   mount: {
     "/rest": [
       `${rootDir}/controllers/**/*.ts`

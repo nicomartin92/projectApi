@@ -1,7 +1,7 @@
-import { Model, ObjectID, Ref } from "@tsed/mongoose";
-import { Groups, Property, Required } from "@tsed/schema";
-import { BrandModel } from "./BrandModel";
-import { CarCategoryModel } from "./CarCategoryModel";
+import {Model, ObjectID, Ref} from "@tsed/mongoose";
+import {Groups, Property, Required} from "@tsed/schema";
+import {BrandModel} from "./BrandModel";
+import {CarCategoryModel} from "./CarCategoryModel";
 /**
  * ## How to inject model?
  *
@@ -23,7 +23,7 @@ export class CarModel {
   @ObjectID("id")
   @Groups("!creation")
   _id: string;
-  
+
   @Required()
   name: string;
 

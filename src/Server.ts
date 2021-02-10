@@ -12,8 +12,7 @@ import "@tsed/mongoose";
 import "./filters/MongoErrorFilter";
 import mongooseConfig from "./config/mongoose";
 
-import { IndexCtrl } from "./controllers/pages/IndexCtrl";
-
+import {IndexCtrl} from "./controllers/pages/IndexCtrl";
 
 export const rootDir = __dirname;
 
@@ -23,12 +22,10 @@ export const rootDir = __dirname;
   httpPort: process.env.PORT || 8083,
   httpsPort: false, // CHANGE
   logger: {
-    level: (process.env.LOG_LEVEL || "info") as any, // info or debug
+    level: (process.env.LOG_LEVEL || "info") as any // info or debug
   },
   mount: {
-    "/rest": [
-      `${rootDir}/controllers/**/*.ts`
-    ],
+    "/rest": [`${rootDir}/controllers/**/*.ts`],
     "/": [IndexCtrl]
   },
   swagger: [
@@ -49,13 +46,10 @@ export const rootDir = __dirname;
   graphql: {
     default: {
       path: "/graphql",
-      buildSchemaOptions: {
-      }
+      buildSchemaOptions: {}
     }
   },
-  exclude: [
-    "**/*.spec.ts"
-  ]
+  exclude: ["**/*.spec.ts"]
 })
 export class Server {
   @Inject()
@@ -71,8 +65,10 @@ export class Server {
       .use(compress({}))
       .use(methodOverride())
       .use(bodyParser.json())
-      .use(bodyParser.urlencoded({
-        extended: true
-      }));
+      .use(
+        bodyParser.urlencoded({
+          extended: true
+        })
+      );
   }
 }

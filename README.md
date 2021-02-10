@@ -1,4 +1,4 @@
-# tsedapi
+# project-api
 
 > An awesome project based on Ts.ED framework
 

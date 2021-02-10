@@ -1,5 +1,5 @@
-import { Model, ObjectID, Unique } from "@tsed/mongoose";
-import { Groups, MinLength, Required } from "@tsed/schema";
+import {Model, ObjectID, Unique} from "@tsed/mongoose";
+import {Groups, MinLength, Required} from "@tsed/schema";
 /**
  * ## How to inject model?
  *
@@ -25,5 +25,5 @@ export class CarCategoryModel {
   @Unique()
   @Required()
   @MinLength(3)
-  name: string; 
+  name: string;
 }

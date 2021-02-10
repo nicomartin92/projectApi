@@ -1,6 +1,6 @@
-import { Model as M, ObjectID, Ref, Unique } from "@tsed/mongoose";
-import { Groups, MinLength, Required } from "@tsed/schema";
-import { BrandModel } from "./BrandModel";
+import {Model as M, ObjectID, Ref, Unique} from "@tsed/mongoose";
+import {Groups, MinLength, Required} from "@tsed/schema";
+import {BrandModel} from "./BrandModel";
 /**
  * ## How to inject model?
  *
@@ -18,7 +18,8 @@ import { BrandModel } from "./BrandModel";
 @M({
   name: "models"
 })
-export class Model { // decorator with some validators
+export class Model {
+  // decorator with some validators
   @ObjectID("id")
   @Groups("!creation", "!update") // masquer les champs
   _id: string;

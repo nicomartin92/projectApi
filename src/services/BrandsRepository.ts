@@ -1,9 +1,6 @@
-import {$log} from "@tsed/common";
 import {Inject, Injectable} from "@tsed/di";
 import {MongooseModel} from "@tsed/mongoose";
 import {BrandModel} from "../models/BrandModel";
-import Brands from "../../ressources/brands.json";
-import {deserialize} from "@tsed/json-mapper";
 
 @Injectable()
 export class BrandsRepository {

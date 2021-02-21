@@ -18,13 +18,13 @@ export class CarsRepository {
   }
 
   async save(car: CarModel): Promise<CarModel> {
-    $log.info({message: "Validate car", car});
+    // $log.info({message: "Validate car", car});
 
     const model = new this.model(car);
-    $log.info({message: "Save car", car});
+    // $log.info({message: "Save car", car});
     await model.updateOne(car, {upsert: true});
 
-    $log.info({message: "Car saved", model});
+    // $log.info({message: "Car saved", model});
 
     return model;
   }

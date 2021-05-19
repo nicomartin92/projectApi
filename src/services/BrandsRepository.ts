@@ -1,5 +1,7 @@
 import {Inject, Injectable} from "@tsed/di";
+import { deserialize } from "@tsed/json-mapper";
 import {MongooseModel} from "@tsed/mongoose";
+import Brands from "../../ressources/brands.json";
 import {BrandModel} from "../models/BrandModel";
 
 @Injectable()
@@ -7,17 +9,17 @@ export class BrandsRepository {
   @Inject(BrandModel)
   model: MongooseModel<BrandModel>;
 
-  /* async $onInit() {
+  async $onInit() {
     const count = await this.model.countDocuments();
 
     if (!count) {
-      const promises = Brands.map((item) => {
+      const promises = Brands.map((item: any) => {
         return this.save(deserialize(item, {type: BrandModel, useAlias: false}));
       });
 
       return Promise.all(promises);
     }
-  } */
+  }
 
   async getBrand(id: string): Promise<BrandModel | null> {
     //$log.info("Search a car from ID", id);
@@ -35,8 +37,8 @@ export class BrandsRepository {
     return model;
   }
 
-  async delete(id: string): Promise<BrandModel> {
-    return await this.model.deleteOne({
+  async delete(id: string): Promise<void> {
+    await this.model.deleteOne({
       _id: id
     });
   }

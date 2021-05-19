@@ -22,6 +22,7 @@ export class BrandsController {
     throw new NotFound("brand not found");
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   @Post("/")
   @Summary("Create a new brand")
   @(Returns(201, BrandModel).Description("Created"))
@@ -36,6 +37,7 @@ export class BrandsController {
     return this.repository.save(brand);
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   @Put("/:id")
   @Summary("Update a brand")
   @(Returns(200, BrandModel).Description("Updated"))
@@ -52,6 +54,7 @@ export class BrandsController {
     return this.repository.save(brand); // brand = payload donné en entrée dans le body param
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   @Delete("/:id")
   @Summary("Delete a brand")
   @(Returns(204).Description("No content"))

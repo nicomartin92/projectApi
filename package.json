@@ -50,7 +50,7 @@
     "@tsed/cli-plugin-mongoose": "2.7.5",
     "@tsed/cli-plugin-passport": "2.7.5",
     "@tsed/cli-plugin-tslint": "2.7.5",
-    "@tsed/testing-mongoose": "^6.25.2",
+    "@tsed/testing-mongoose": "^6.26.4",
     "@types/compression": "^1.7.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.9",
@@ -77,8 +77,8 @@
     "ts-jest": "^26.5.0",
     "ts-node": "^9.1.1",
     "ts-node-dev": "1.1.1",
-    "typescript": "^4.1.3",
-    "tsconfig-paths": "3.9.0"
+    "tsconfig-paths": "3.9.0",
+    "typescript": "^4.1.3"
   },
   "readme": "ERROR: No README data found!",
   "_id": "project-api@1.0.0"
